@@ -109,7 +109,7 @@ class ViewController: UIViewController, URLSessionDownloadDelegate, UIDocumentIn
                     didWriteData bytesWritten: Int64,
                     totalBytesWritten: Int64,
                     totalBytesExpectedToWrite: Int64){
-        var progress = Float(totalBytesWritten)/Float(totalBytesExpectedToWrite)
+        let progress = Float(totalBytesWritten)/Float(totalBytesExpectedToWrite)
         debugPrint("PROGRESS \(progress * 100)")
         progressView.setProgress(progress, animated: true)
     }
@@ -125,7 +125,7 @@ class ViewController: UIViewController, URLSessionDownloadDelegate, UIDocumentIn
         }else{
             print("The task finished transferring data successfully")
             downloadButton.setTitle("Play", for: .normal)
-            downloadStatus = 3
+            downloadStatus = 0
         }
     }
     
