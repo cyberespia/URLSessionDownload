@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, URLSessionDownloadDelegate, UIDocumentInteractionControllerDelegate {
 
     
+    @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var downloadButton: UIButton!
     var downloadTask: URLSessionDownloadTask!
     var backgroundSession: URLSession!
@@ -81,10 +82,7 @@ class ViewController: UIViewController, URLSessionDownloadDelegate, UIDocumentIn
 
     //MARK: URLSessionDownloadDelegate
     // 1
-    func urlSession(_ session: URLSession,
-                    downloadTask: URLSessionDownloadTask,
-                    didFinishDownloadingTo location: URL){
-        
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         let documentDirectoryPath:String = path[0]
         let fileManager = FileManager()
@@ -103,21 +101,17 @@ class ViewController: UIViewController, URLSessionDownloadDelegate, UIDocumentIn
             }
         }
     }
+    
     // 2
-    func urlSession(_ session: URLSession,
-                    downloadTask: URLSessionDownloadTask,
-                    didWriteData bytesWritten: Int64,
-                    totalBytesWritten: Int64,
-                    totalBytesExpectedToWrite: Int64){
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
         let progress = Float(totalBytesWritten)/Float(totalBytesExpectedToWrite)
         debugPrint("PROGRESS \(progress * 100)")
         progressView.setProgress(progress, animated: true)
+        progressLabel.text = String(format: "%.1f%%", progress * 100)
     }
     
     //MARK: URLSessionTaskDelegate
-    func urlSession(_ session: URLSession,
-                    task: URLSessionTask,
-                    didCompleteWithError error: Error?){
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?){
         downloadTask = nil
         progressView.setProgress(0.0, animated: true)
         if (error != nil) {

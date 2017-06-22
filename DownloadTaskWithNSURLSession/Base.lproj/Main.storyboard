@@ -38,6 +38,13 @@
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="a2U-hc-leZ">
                                 <rect key="frame" x="111" y="303" width="153" height="2"/>
                             </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDQ-3s-gfu">
+                                <rect key="frame" x="142" y="243" width="90" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -50,12 +57,13 @@
                     </view>
                     <connections>
                         <outlet property="downloadButton" destination="d8L-Gw-xhP" id="yXR-er-Bfj"/>
+                        <outlet property="progressLabel" destination="PDQ-3s-gfu" id="Mq0-IQ-OKY"/>
                         <outlet property="progressView" destination="a2U-hc-leZ" id="bpk-RW-Tec"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="269" y="429"/>
+            <point key="canvasLocation" x="268" y="428.63568215892059"/>
         </scene>
     </scenes>
 </document>
