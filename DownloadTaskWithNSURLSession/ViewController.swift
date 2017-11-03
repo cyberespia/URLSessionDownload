@@ -101,17 +101,18 @@ class ViewController: UIViewController, URLSessionDownloadDelegate, UIDocumentIn
 
     destinationURLForFile = URL(fileURLWithPath: documentDirectoryPath.appendingFormat("/big_buck_bunny_1080p_h264.mov"))
     
-    if fileManager.fileExists(atPath: (destinationURLForFile?.path)!){
-      showFileWithPath(path: (destinationURLForFile?.path)!)
-    }
-    else{
+    guard fileManager.fileExists(atPath: (destinationURLForFile?.path)!) else {
       do {
         try fileManager.moveItem(at: location, to: destinationURLForFile!)
         // show file
-        showFileWithPath(path: (destinationURLForFile?.path)!)
+//        showFileWithPath(path: (destinationURLForFile?.path)!)
       }catch{
         print("An error occurred while moving file to destination url")
       }
+      
+      downloadButton.setTitle("Play", for: .normal)
+      downloadStatus = 3
+      return
     }
   }
   
