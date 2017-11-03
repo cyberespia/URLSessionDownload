@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,9 +40,17 @@
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="a2U-hc-leZ">
                                 <rect key="frame" x="111" y="303" width="153" height="2"/>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDQ-3s-gfu">
-                                <rect key="frame" x="142" y="243" width="90" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDQ-3s-gfu">
+                                <rect key="frame" x="111" y="241" width="71" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="5IN-DL-hVh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 mb/s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vq-vw-V51" userLabel="Speed Label">
+                                <rect key="frame" x="190" y="241" width="74" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -48,17 +58,25 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="PDQ-3s-gfu" firstAttribute="baseline" secondItem="7vq-vw-V51" secondAttribute="baseline" id="1E7-wc-6p0"/>
                             <constraint firstItem="a2U-hc-leZ" firstAttribute="width" secondItem="d8L-Gw-xhP" secondAttribute="width" id="91k-lJ-I9d"/>
+                            <constraint firstItem="PDQ-3s-gfu" firstAttribute="top" secondItem="d8L-Gw-xhP" secondAttribute="bottom" constant="31" id="DwX-Jz-9ZG"/>
+                            <constraint firstItem="PDQ-3s-gfu" firstAttribute="firstBaseline" secondItem="7vq-vw-V51" secondAttribute="firstBaseline" id="F3c-Ga-nRd"/>
+                            <constraint firstItem="a2U-hc-leZ" firstAttribute="top" secondItem="PDQ-3s-gfu" secondAttribute="bottom" constant="27" id="VVV-1w-u2h"/>
+                            <constraint firstItem="7vq-vw-V51" firstAttribute="trailing" secondItem="a2U-hc-leZ" secondAttribute="trailing" id="YRl-bg-h50"/>
                             <constraint firstItem="a2U-hc-leZ" firstAttribute="centerX" secondItem="d8L-Gw-xhP" secondAttribute="centerX" id="aDX-Wf-VvB"/>
                             <constraint firstItem="d8L-Gw-xhP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dWQ-qp-ald"/>
                             <constraint firstItem="a2U-hc-leZ" firstAttribute="top" secondItem="d8L-Gw-xhP" secondAttribute="bottom" constant="93" id="qTb-hb-DIh"/>
+                            <constraint firstItem="PDQ-3s-gfu" firstAttribute="leading" secondItem="a2U-hc-leZ" secondAttribute="leading" id="tHR-TH-KCI"/>
                             <constraint firstItem="d8L-Gw-xhP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="133" id="tLk-EE-r25"/>
+                            <constraint firstItem="7vq-vw-V51" firstAttribute="leading" secondItem="PDQ-3s-gfu" secondAttribute="trailing" constant="8" symbolic="YES" id="zeZ-W2-uDz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="downloadButton" destination="d8L-Gw-xhP" id="yXR-er-Bfj"/>
                         <outlet property="progressLabel" destination="PDQ-3s-gfu" id="Mq0-IQ-OKY"/>
                         <outlet property="progressView" destination="a2U-hc-leZ" id="bpk-RW-Tec"/>
+                        <outlet property="speedLabel" destination="7vq-vw-V51" id="TNm-OE-Rdr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
