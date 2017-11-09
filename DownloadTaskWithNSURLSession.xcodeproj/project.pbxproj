@@ -14,6 +14,7 @@
 		C4D59D051BEAB71100F3B8C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4D59D031BEAB71100F3B8C6 /* LaunchScreen.storyboard */; };
 		C4D59D101BEAB71100F3B8C6 /* DownloadTaskWithNSURLSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D59D0F1BEAB71100F3B8C6 /* DownloadTaskWithNSURLSessionTests.swift */; };
 		C4D59D1B1BEAB71100F3B8C6 /* DownloadTaskWithNSURLSessionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D59D1A1BEAB71100F3B8C6 /* DownloadTaskWithNSURLSessionUITests.swift */; };
+		D78862F61FB3A69B0065916B /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78862F51FB3A69B0065916B /* Downloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		C4D59D161BEAB71100F3B8C6 /* DownloadTaskWithNSURLSessionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DownloadTaskWithNSURLSessionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4D59D1A1BEAB71100F3B8C6 /* DownloadTaskWithNSURLSessionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTaskWithNSURLSessionUITests.swift; sourceTree = "<group>"; };
 		C4D59D1C1BEAB71100F3B8C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D78862F51FB3A69B0065916B /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				C4D59D011BEAB71100F3B8C6 /* Assets.xcassets */,
 				C4D59D031BEAB71100F3B8C6 /* LaunchScreen.storyboard */,
 				C4D59D061BEAB71100F3B8C6 /* Info.plist */,
+				D78862F51FB3A69B0065916B /* Downloader.swift */,
 			);
 			path = DownloadTaskWithNSURLSession;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			files = (
 				C4D59CFD1BEAB71100F3B8C6 /* ViewController.swift in Sources */,
 				C4D59CFB1BEAB71100F3B8C6 /* AppDelegate.swift in Sources */,
+				D78862F61FB3A69B0065916B /* Downloader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
